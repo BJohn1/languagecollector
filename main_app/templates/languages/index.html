@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Language List</h1>
+
+{% for language in languages %}
+  <div class="card">
+    <a href="{% url 'detail' language.id %}">
+        <div class="card-content">
+        <span class="card-title">{{ language.name }}</span>
+        {% if language.years_experience > 0 %}
+            <p>Years Experience: {{ language.years_experience }}</p>
+        {% else %}
+            <p>Years Experience: N00B</p>
+        {% endif %}
+        </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
