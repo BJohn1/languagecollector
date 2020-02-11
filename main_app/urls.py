@@ -10,4 +10,5 @@ urlpatterns = [
   path('languages/<int:pk>/update/', views.LanguageUpdate.as_view(), name='languages_update'),
   path('languages/<int:pk>/delete/', views.LanguageDelete.as_view(), name='languages_delete'),
   path('languages/<int:language_id>/add_upskill/', views.add_upskill, name='add_upskill'),
+  path('accounts/signup/', views.signup, name='signup'),
 ]
