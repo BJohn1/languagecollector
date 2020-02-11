@@ -19,8 +19,13 @@
         </ul>
         <ul class="right">
           <li><a href="/about">About</a></li>
-          <li><a href="{% url 'languages_create' %}">Add a Language</a></li>
-          <li><a href="/languages">View All My Languages</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'languages_create' %}">Add a Language</a></li>
+            <li><a href="{% url 'index' %}">View All My Languages</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
